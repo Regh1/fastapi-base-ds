@@ -40,7 +40,7 @@ def eliminar_persona(db: Session, persona_id: int) -> Persona:
 
 
 def crear_mascota(db: Session, mascota: schemas.MascotaCreate) -> Mascota:
-    return Mascota.create(db, mascota)
+    return Mascota.create(db, nombre=mascota.nombre, tipo=mascota.tipo)
 
 
 
@@ -72,7 +72,7 @@ def eliminar_mascota(db: Session, mascota_id: int) -> Mascota:
 
 
 def crear_vehiculo(db: Session, vehiculo: schemas.VehiculoCreate) -> Vehiculo:
-    return Vehiculo.create(db, vehiculo)
+    return Vehiculo.create(db, marca=vehiculo.marca, modelo=vehiculo.modelo, tipo=vehiculo.tipo)
 
 
 
@@ -91,7 +91,7 @@ def modificar_vehiculo(
     db: Session, vehiculo_id: int, vehiculo: schemas.VehiculoUpdate
 ) -> Vehiculo:
     db_vehiculo = leer_vehiculo(db, vehiculo_id)
-    return db_vehiculo.update(db, nombre=vehiculo.nombre, tipo=vehiculo.tipo)
+    return db_vehiculo.update(db, marca=vehiculo.marca, modelo=vehiculo.modelo,tipo=vehiculo.tipo)
 
 
 def eliminar_vehiculo(db: Session, vehiculo_id: int) -> Vehiculo:
