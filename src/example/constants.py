@@ -1,7 +1,10 @@
 class ErrorCode:
     PERSONA_NO_ENCONTRADA = "La persona no fue encontrada."
     MASCOTA_NO_ENCONTRADA = "La mascota no fue encontrada."
+    VEHICULO_NO_ENCONTRADA = "El vehiculo no fue encontrado"
     EMAIL_DUPLICADO = "El email ya existe."
     NOMBRE_DUPLICADO = "El nombre ya existe."
     PERSONA_TIENE_MASCOTAS = "La persona tiene mascotas a cargo. No puede ser eliminada."
+    PERSONA_TIENE_VEHICULOS = "La persona posee vehiculos. No puede ser eliminado."
     TIPO_MASCOTA_INVALIDO = "El tipo de mascota indicado es inválido. El valor indicado debiera ser una de las opciones en la lista:"
+    TIPO_VEHICULO_INVALIDO = "El tipo del vehiculo indicado es invalido. El valor indicado debiera ser una de las opciones en la lista:"
