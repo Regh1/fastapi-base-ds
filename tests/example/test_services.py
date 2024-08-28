@@ -8,6 +8,7 @@ from src.example import exceptions
 from src.example.services import (
     listar_personas,
     listar_mascotas,
+    listar_vehiculos
     crear_persona,
     modificar_persona,
     leer_persona,
@@ -63,4 +64,8 @@ def test_listar_personas(session: Session) -> None:
 
 def test_listar_mascotas(session: Session) -> None:
     mascotas = listar_mascotas(session)
+    assert len(mascotas) == 3
+
+def test_listar_vehiculos(session: Session) -> None:
+    vehiculos = listar_vehiculos(session)
     assert len(mascotas) == 3

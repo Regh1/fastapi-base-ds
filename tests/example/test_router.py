@@ -20,3 +20,8 @@ def test_read_mascotas(session: Session) -> None:
     response = client.get(f"/mascotas")
     assert response.status_code == status.HTTP_200_OK
     assert len(response.json()) == 3
+
+def test_read_vehiculos(session: Session) -> None:
+    response = client.get(f"/vehiculos")
+    assert response.status_code == status.HTTP_200_OK
+    assert len(response.json()) == 3

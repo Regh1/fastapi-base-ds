@@ -8,9 +8,9 @@ from sqlalchemy.orm import sessionmaker, Session
 from src.main import app
 from src.database import get_db
 from src.models import BaseModel
-from src.example.services import crear_persona, crear_mascota
-from src.example.schemas import PersonaCreate, MascotaCreate
-from src.example.models import TipoMascota
+from src.example.services import crear_persona, crear_mascota, crear_vehiculo
+from src.example.schemas import PersonaCreate, MascotaCreate, VehiculoCreate
+from src.example.models import TipoMascota, TipoVehiculo
 
 load_dotenv()
 
@@ -53,6 +53,7 @@ def session() -> Generator[Session, None, None]:
     mascota_2 = crear_mascota(db, MascotaCreate(nombre="Felipe", tipo=TipoMascota.PERRO, tutor_id=persona_1.id))
     mascota_3 = crear_mascota(db, MascotaCreate(nombre="Coco", tipo=TipoMascota.COBAYO, tutor_id=persona_2.id))
 
+    vehiculo_1= crear_vehiculo(db, VehiculoCreate(marca="Mitsubishi", modelo="Pajero", tipo=TipoVehiculo.CAMIONETA, duenio_id=persona_1.id))
     # db.add_all(
     #     [
     #         persona_1,
