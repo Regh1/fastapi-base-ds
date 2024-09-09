@@ -7,7 +7,7 @@ from sqlalchemy import StaticPool, create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from src.main import app
 from src.database import get_db
-from src.models import BaseModel
+from src.models import ModeloBase
 from src.example.services import crear_persona, crear_mascota, crear_vehiculo
 from src.example.schemas import PersonaCreate, MascotaCreate, VehiculoCreate
 from src.example.models import TipoMascota, TipoVehiculo
@@ -39,7 +39,7 @@ app.dependency_overrides[get_db] = override_get_db
 @pytest.fixture
 def session() -> Generator[Session, None, None]:
     # Creamos las tablas en la db de pruebas
-    BaseModel.metadata.create_all(bind=engine)
+    ModeloBase.metadata.create_all(bind=engine)
 
     db = TestingSessionLocal()
 
@@ -68,4 +68,4 @@ def session() -> Generator[Session, None, None]:
     yield db
 
     db.close()
-    BaseModel.metadata.drop_all(bind=engine)
+    ModeloBase.metadata.drop_all(bind=engine)

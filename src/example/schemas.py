@@ -97,3 +97,7 @@ class Vehiculo(VehiculoBase):
     nombre_duenio: str
 
     model_config = {"from_attributes": True}
+
+class MascotaDelete(MascotaBase):
+    id: int
+    tutor_id: int
