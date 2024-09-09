@@ -72,7 +72,10 @@ def delete_mascota(mascota_id: int, db: Session = Depends(get_db)):
 
 @router.post("/vehiculos", response_model=schemas.Vehiculo)
 def create_vehiculo(vehiculo: schemas.VehiculoCreate, db: Session = Depends(get_db)):
-    return services.crear_vehiculo(db, vehiculo)
+    vehiculo = services.crear_vehiculo(db, vehiculo)
+    #import pdb; pdb.set_trace() # ponemos un breakpoint
+
+    return vehiculo
 
 
 @router.get("/vehiculos", response_model=list[schemas.Vehiculo])

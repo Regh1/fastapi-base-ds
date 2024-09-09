@@ -72,7 +72,7 @@ def eliminar_mascota(db: Session, mascota_id: int) -> Mascota:
 
 
 def crear_vehiculo(db: Session, vehiculo: schemas.VehiculoCreate) -> Vehiculo:
-    return Vehiculo.create(db, marca=vehiculo.marca, modelo=vehiculo.modelo, tipo=vehiculo.tipo)
+    return Vehiculo.create(db, marca=vehiculo.marca, modelo=vehiculo.modelo, tipo=vehiculo.tipo, duenio_id=vehiculo.duenio_id)
 
 
 

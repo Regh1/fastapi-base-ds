@@ -92,8 +92,6 @@ class VehiculoUpdate(VehiculoBase):
 
 class Vehiculo(VehiculoBase):
     id: int
-    fecha_creacion: datetime
-    fecha_modificacion: datetime
     tipo: TipoVehiculo
     duenio_id: int
     nombre_duenio: str
